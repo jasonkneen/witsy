@@ -155,18 +155,6 @@ export default class {
       return null
     }
 
-    // make sure llm has latest tools
-    if (opts?.keepLlm !== true) {
-      if (!this.llmManager.isComputerUseModel(opts.engine, opts.model)) {
-        await this.llmManager.loadTools(this.llm, this.workspaceId, availablePlugins, this.chat.tools, { codeExecutionMode })
-      } else {
-        this.llm.clearPlugins()
-      }
-    }
-
-    // save this
-    const hadPlugins = this.llm.plugins.length > 0
-
     // add user message
     const userMessage = new Message('user', prompt)
     userMessage.setExpert(fullExpertI18n(opts.expert))
@@ -205,6 +193,18 @@ export default class {
 
     // callback
     generationCallback?.('before_generation')
+
+    // make sure llm has latest tools
+    if (opts?.keepLlm !== true) {
+      if (!this.llmManager.isComputerUseModel(opts.engine, opts.model)) {
+        await this.llmManager.loadTools(this.llm, this.workspaceId, availablePlugins, this.chat.tools, { codeExecutionMode })
+      } else {
+        this.llm.clearPlugins()
+      }
+    }
+
+    // save this
+    const hadPlugins = this.llm.plugins.length > 0
 
     // deep research will come with its own instructions
     let rc: GenerationResult = 'error'
