@@ -5,25 +5,26 @@
       <ChatListFolder v-if="displayMode == 'folder'" :filtered="filter != ''" :chats="visibleChats" :selection="selection" :active="chat" :selectMode="selectMode" :generating-chat-ids="generatingChatIds" @select="onSelectChat" @menu="showContextMenu"/>
     </div>
     <ContextMenuPlus v-if="showMenu" @close="closeContextMenu" :mouseX="menuX" :mouseY="menuY">
-      <div class="item" @click="handleActionClick('rename')">{{ t('common.rename') }}</div>
-      <div v-if="displayMode === 'folder'" class="item" @click="handleActionClick('move')">{{ t('common.move') }}</div>
-      <div class="item" @click="handleActionClick('delete')">{{ t('common.delete') }}</div>
+      <div class="item" @click="handleActionClick('rename')"><PencilIcon /> {{ t('common.rename') }}</div>
+      <div v-if="displayMode === 'folder'" class="item" @click="handleActionClick('move')"><FileInputIcon /> {{ t('common.move') }}</div>
+      <div class="item danger" @click="handleActionClick('delete')"><Trash2Icon />{{ t('common.delete') }}</div>
     </ContextMenuPlus>
   </div>
 </template>
 
 <script setup lang="ts">
 
-import { computed, inject, onMounted, PropType, ref } from 'vue'
+import useEventListener from '@composables/event_listener'
 import Chat from '@models/chat'
+import type { ChatCallbacks } from '@screens/Chat.vue'
 import { t } from '@services/i18n'
 import { kMediaChatId, store } from '@services/store'
+import { FileInputIcon, PencilIcon, Trash2Icon } from 'lucide-vue-next'
 import { ChatListMode } from 'types/config'
+import { computed, inject, onMounted, PropType, ref } from 'vue'
 import ChatListFolder from './ChatListFolder.vue'
 import ChatListTimeline from './ChatListTimeline.vue'
 import ContextMenuPlus from './ContextMenuPlus.vue'
-import useEventListener from '@composables/event_listener'
-import type { ChatCallbacks } from '@screens/Chat.vue'
 
 const { onDomEvent } = useEventListener()
 const chatCallbacks = inject<ChatCallbacks>('chat-callbacks')
