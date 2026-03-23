@@ -3,7 +3,11 @@
     <div class="tool-group-header" @click="expanded = !expanded">
       <WrenchIcon class="tool-group-icon" />
       <span class="tool-group-text">{{ t('message.toolGroup.summary', { count: toolCalls.length }) }}</span>
-      <ChevronDownIcon v-if="!expanded" class="tool-group-chevron" />
+      <span v-if="runningCount > 0" class="tool-group-running-count">
+        {{ runningCount }}
+        <SpinningIcon :icon="LoaderCircleIcon" :spinning="true" size="sm" />
+        </span>
+      <ChevronDownIcon v-else-if="!expanded" class="tool-group-chevron" />
       <ChevronRightIcon v-else class="tool-group-chevron" />
     </div>
     <div v-if="expanded" class="tool-group-body">
@@ -14,13 +18,14 @@
 
 <script setup lang="ts">
 
-import { ChevronDownIcon, ChevronRightIcon, WrenchIcon } from 'lucide-vue-next'
-import { ref } from 'vue'
+import { ChevronDownIcon, ChevronRightIcon, LoaderCircleIcon, WrenchIcon } from 'lucide-vue-next'
+import { computed, ref } from 'vue'
 import { t } from '@services/i18n'
 import { ToolCall } from 'types/index'
 import MessageItemToolBlock from './MessageItemToolBlock.vue'
+import SpinningIcon from './SpinningIcon.vue'
 
-defineProps({
+const props = defineProps({
   toolCalls: {
     type: Array as () => ToolCall[],
     required: true,
@@ -28,6 +33,10 @@ defineProps({
 })
 
 const expanded = ref(false)
+
+const runningCount = computed(() => {
+  return props.toolCalls.filter(tc => !tc.done).length
+})
 
 </script>
 
@@ -52,6 +61,15 @@ const expanded = ref(false)
 
     .tool-group-text {
       flex: 1;
+    }
+
+    .tool-group-running-count {
+      margin-left: auto;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: var(--color-on-surface-variant);
     }
   }
 
