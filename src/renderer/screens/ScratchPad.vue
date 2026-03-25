@@ -115,12 +115,8 @@ export interface ToolbarAction {
 }
 
 // events
-const { onBusEvent } = useEventBus()
 const { onDomEvent } = useEventListener()
 const { onIpcEvent } = useIpcListener()
-
-// load store
-store.load()
 
 const placeholder = t('scratchpad.placeholder')
 
