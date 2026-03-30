@@ -2208,6 +2208,9 @@
       "call": "Appel d'outil : {name}",
       "params": "Paramètres",
       "results": "Résultats"
+    },
+    "toolGroup": {
+      "summary": "1 appel d'outil|{count} appels d'outil"
     }
   },
   "modelPull": {
@@ -2714,16 +2717,16 @@
         "shiftEnter": "Entrée nouvelle ligne, Shift+Entrée envoie",
         "title": "Raccourci pour envoyer un message"
       },
-      "showToolCalls": {
-        "always": "Toujours",
-        "calling": "Seulement pendant l'exécution de l'outil",
-        "never": "Jamais",
-        "title": "Afficher les appels d'outils"
-      },
       "theme": "Thème de chat",
       "themes": {
         "conversation": "Bulles",
         "openai": "Classique"
+      },
+      "toolCallsDisplay": {
+        "details": "Complet",
+        "none": "Masqué",
+        "summary": "Résumé",
+        "title": "Affichage des appels d'outils"
       }
     },
     "commands": {

@@ -2227,6 +2227,9 @@
       "call": "Wywołanie narzędzia: {name}",
       "params": "Parametry",
       "results": "Wyniki"
+    },
+    "toolGroup": {
+      "summary": "1 wywołanie narzędzia|{count} wywołań narzędzi"
     }
   },
   "modelPull": {
@@ -2736,16 +2739,16 @@
         "shiftEnter": "Enter nowa linia, Shift+Enter wysyła",
         "title": "Skrót do wysyłania wiadomości"
       },
-      "showToolCalls": {
-        "always": "Zawsze",
-        "calling": "Tylko podczas wykonywania narzędzi",
-        "never": "Nigdy",
-        "title": "Pokaż wywołania narzędzi"
-      },
       "theme": "Motyw czatu",
       "themes": {
         "conversation": "Dymki",
         "openai": "Klasyczny"
+      },
+      "toolCallsDisplay": {
+        "details": "Pełne",
+        "none": "Ukryte",
+        "summary": "Podsumowanie",
+        "title": "Wyświetlanie wywołań narzędzi"
       }
     },
     "commands": {

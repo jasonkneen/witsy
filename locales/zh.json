@@ -2227,6 +2227,9 @@
       "call": "工具调用: {name}",
       "params": "参数",
       "results": "结果"
+    },
+    "toolGroup": {
+      "summary": "1 次工具调用|{count} 次工具调用"
     }
   },
   "modelPull": {
@@ -2736,16 +2739,16 @@
         "shiftEnter": "按 Enter 换行，Shift+Enter 发送",
         "title": "发送消息快捷键"
       },
-      "showToolCalls": {
-        "always": "总是",
-        "calling": "仅在工具执行期间",
-        "never": "从不",
-        "title": "显示工具调用"
-      },
       "theme": "聊天主题",
       "themes": {
         "conversation": "气泡",
         "openai": "经典"
+      },
+      "toolCallsDisplay": {
+        "details": "详细",
+        "none": "隐藏",
+        "summary": "摘要",
+        "title": "工具调用显示"
       }
     },
     "commands": {

@@ -2227,6 +2227,9 @@
       "call": "Chamada da ferramenta: {name}",
       "params": "Parâmetros",
       "results": "Resultados"
+    },
+    "toolGroup": {
+      "summary": "1 chamada de ferramenta|{count} chamadas de ferramenta"
     }
   },
   "modelPull": {
@@ -2736,16 +2739,16 @@
         "shiftEnter": "Enter para nova linha, Shift+Enter envia",
         "title": "Atalho para enviar mensagem"
       },
-      "showToolCalls": {
-        "always": "Sempre",
-        "calling": "Durante a execução da ferramenta apenas",
-        "never": "Nunca",
-        "title": "Mostrar chamadas de ferramentas"
-      },
       "theme": "Tema do chat",
       "themes": {
         "conversation": "Bolhas",
         "openai": "Clássico"
+      },
+      "toolCallsDisplay": {
+        "details": "Completo",
+        "none": "Oculto",
+        "summary": "Resumo",
+        "title": "Exibição das chamadas de ferramenta"
       }
     },
     "commands": {

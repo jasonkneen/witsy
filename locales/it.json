@@ -2208,6 +2208,9 @@
       "call": "Chiamata allo strumento: {name}",
       "params": "Parametri",
       "results": "Risultati"
+    },
+    "toolGroup": {
+      "summary": "1 chiamata allo strumento|{count} chiamate agli strumenti"
     }
   },
   "modelPull": {
@@ -2714,16 +2717,16 @@
         "shiftEnter": "Invio per nuova riga, Shift+Invio per inviare",
         "title": "Scorciatoia invio messaggio"
       },
-      "showToolCalls": {
-        "always": "Sempre",
-        "calling": "Solo durante l'esecuzione dello strumento",
-        "never": "Mai",
-        "title": "Mostra chiamate agli strumenti"
-      },
       "theme": "Tema chat",
       "themes": {
         "conversation": "Bolle",
         "openai": "Classico"
+      },
+      "toolCallsDisplay": {
+        "details": "Completo",
+        "none": "Nascosto",
+        "summary": "Riepilogo",
+        "title": "Visualizzazione delle chiamate agli strumenti"
       }
     },
     "commands": {

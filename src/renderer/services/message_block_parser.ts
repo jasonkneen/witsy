@@ -1,3 +1,5 @@
+import { LlmRole } from 'multi-llm-ts'
+import { ToolCallsDisplay } from 'types/config'
 import { ToolCall } from 'types/index'
 import { closeOpenMarkdownTags, getCodeBlocks, isHtmlContent } from './markdown'
 import { kSearchPluginName } from './plugins/search'
@@ -64,15 +66,20 @@ type BlockTable = {
   content: string
 }
 
-type BlockContent = BlockEmpty | BlockText | BlockUserText | BlockMedia | BlockArtifact | BlockHtml | BlockTool | BlockSearch | BlockTable
+type BlockToolGroup = {
+  type: 'tool-group'
+  toolCalls: ToolCall[]
+}
+
+type BlockContent = BlockEmpty | BlockText | BlockUserText | BlockMedia | BlockArtifact | BlockHtml | BlockTool | BlockSearch | BlockTable | BlockToolGroup
 
 export type Block = BlockMeta & BlockContent
 
 export interface ComputeBlocksOptions {
-  role: 'user' | 'assistant' | 'system'
+  role: Omit<LlmRole, 'developer'>
   transient: boolean
   toolCalls: ToolCall[]
-  showToolCalls: 'always' | 'never' | 'calling'
+  toolCallsDisplay: ToolCallsDisplay
   filter?: string | null
 }
 
@@ -299,17 +306,17 @@ export const computeBlocks = (content: string | null, options: ComputeBlocksOpti
         const toolCall =
           match[1] === 'id' ? options.toolCalls.find(call => call.id === match[2]) :
             match[1] === 'index' ? options.toolCalls[parseInt(match[2])] : null
-        if (toolCall && toolCall.done) {
-          if (options.showToolCalls === 'always') {
+        if (toolCall) {
+          if (options.toolCallsDisplay !== 'none') {
             blocks.push({
               type: 'tool',
               toolCall: toolCall,
               start: matchStart,
               end: matchEnd,
-              // Tool blocks are immediately stable - fully matched
-              stable: true
+              // Tool blocks are stable only when done
+              stable: toolCall.done,
             })
-          } else if (toolCall.function === kSearchPluginName) {
+          } else if (toolCall.done && toolCall.function === kSearchPluginName) {
             blocks.push({
               type: 'search',
               toolCall: toolCall,
@@ -516,4 +523,43 @@ export const computeBlocksIncremental = (
   }
 
   return finalResult
+}
+
+/**
+ * Groups consecutive 'tool' blocks into 'tool-group' blocks.
+ * Non-tool blocks (including 'search') pass through unchanged.
+ */
+export const groupToolBlocks = (blocks: Block[]): Block[] => {
+  const result: Block[] = []
+  let toolGroup: ToolCall[] = []
+  let groupStart = 0
+  let groupEnd = 0
+
+  const flushGroup = () => {
+    if (toolGroup.length > 0) {
+      result.push({
+        type: 'tool-group',
+        toolCalls: [...toolGroup],
+        start: groupStart,
+        end: groupEnd,
+        stable: true,
+      })
+      toolGroup = []
+    }
+  }
+
+  for (const block of blocks) {
+    if (block.type === 'tool') {
+      if (toolGroup.length === 0) {
+        groupStart = block.start
+      }
+      groupEnd = block.end
+      toolGroup.push(block.toolCall!)
+    } else {
+      flushGroup()
+      result.push(block)
+    }
+  }
+  flushGroup()
+  return result
 }

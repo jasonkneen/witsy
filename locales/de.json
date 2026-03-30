@@ -2208,6 +2208,9 @@
       "call": "Tool-Aufruf: {name}",
       "params": "Parameter",
       "results": "Ergebnisse"
+    },
+    "toolGroup": {
+      "summary": "1 Tool-Aufruf|{count} Tool-Aufrufe"
     }
   },
   "modelPull": {
@@ -2714,16 +2717,16 @@
         "shiftEnter": "Enter für neue Zeile, Shift+Enter sendet",
         "title": "Nachrichten-Schnellzugriff"
       },
-      "showToolCalls": {
-        "always": "Immer",
-        "calling": "Nur während der Tool-Ausführung",
-        "never": "Nie",
-        "title": "Tool-Aufrufe anzeigen"
-      },
       "theme": "Chat-Theme",
       "themes": {
         "conversation": "Sprechblasen",
         "openai": "Klassisch"
+      },
+      "toolCallsDisplay": {
+        "details": "Vollständig",
+        "none": "Ausgeblendet",
+        "summary": "Zusammenfassung",
+        "title": "Anzeige von Tool-Aufrufen"
       }
     },
     "commands": {

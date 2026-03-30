@@ -2224,6 +2224,9 @@
       "call": "Tool call: {name}",
       "params": "Parameters",
       "results": "Results"
+    },
+    "toolGroup": {
+      "summary": "1 tool call|{count} tool calls"
     }
   },
   "modelPull": {
@@ -2738,16 +2741,16 @@
         "shiftEnter": "Enter for new line, Shift+Enter sends",
         "title": "Send message shortcut"
       },
-      "showToolCalls": {
-        "always": "Always",
-        "calling": "During tool execution only",
-        "never": "Never",
-        "title": "Show tool calls"
-      },
       "theme": "Chat theme",
       "themes": {
         "conversation": "Bubbles",
         "openai": "Classic"
+      },
+      "toolCallsDisplay": {
+        "details": "Full",
+        "none": "Hidden",
+        "summary": "Summary",
+        "title": "Tool calls display"
       }
     },
     "commands": {
