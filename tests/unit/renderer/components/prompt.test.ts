@@ -441,9 +441,12 @@ test('Display base64 attachment', async () => {
   expect(wrapper.find('.attachment img').attributes('src')).toBe('data:image/png;base64,image64')
 })
 
-test('History navigation with ArrowUp from position 0', async () => {
+test('History navigation with ArrowUp from position 0 strips context-only history content', async () => {
 
-  await wrapper.setProps({ historyProvider: () => [ 'Hello', 'Bonjour' ] })
+  await wrapper.setProps({ historyProvider: () => [
+    'Hello<context-only>hidden context</context-only>',
+    'Bonjour<context-only>extra context</context-only>',
+  ] })
   const prompt = wrapper.find<HTMLInputElement>('.input textarea')
   await prompt.setValue('Hola')
   // triggering ArrowUp does not move selection to the beginning

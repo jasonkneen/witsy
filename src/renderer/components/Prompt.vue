@@ -1340,9 +1340,12 @@ const onKeyDown = (event: KeyboardEvent) => {
       return
     }
 
+    // helper
+    const cleanedPrompt = (prompt: string) => prompt.replaceAll(/<context-only>.*?<\/context-only>/gs, '')
+
     // now navigate
     let newPrompt = null
-    const index = history.findIndex((m: string) => m === prompt.value)
+    const index = history.findIndex((m: string) => cleanedPrompt(m) === prompt.value)
     if (event.key === 'ArrowUp') {
       if (index === -1) {
         draftPrompt = prompt.value
@@ -1365,7 +1368,7 @@ const onKeyDown = (event: KeyboardEvent) => {
 
     // update
     if (newPrompt !== null) {
-      prompt.value = newPrompt
+      prompt.value = cleanedPrompt(newPrompt)
       nextTick(() => {
         input.value.setSelectionRange(0, 0)
         autoGrow(input.value)
