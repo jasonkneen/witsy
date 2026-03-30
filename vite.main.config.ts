@@ -6,9 +6,10 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config
 export default defineConfig((env) => {
-  const forgeEnv = env as ConfigEnv<'build'>;
-  const { forgeConfigSelf } = forgeEnv;
+  const forgeEnv = env as ConfigEnv;
+  const { forgeConfigSelf } = forgeEnv as any;
   const define = getBuildDefine(forgeEnv);
+  const mainExternal = external.filter((dependency) => dependency !== 'pdfjs-dist');
   const config: UserConfig = {
     build: {
       lib: {
@@ -18,7 +19,7 @@ export default defineConfig((env) => {
       },
       sourcemap: true,
       rollupOptions: {
-        external,
+        external: mainExternal,
       },
     },
     test: {

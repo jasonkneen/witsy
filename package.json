@@ -181,7 +181,7 @@
     "openai": "^6.7.0",
     "openai-speech-stream-player": "^1.0.8",
     "parakeet.js": "^0.0.3",
-    "pdf2json": "^3.2.0",
+    "pdfjs-dist": "^5.4.149",
     "plist": "^3.1.0",
     "portfinder": "^1.0.37",
     "powershell": "^2.3.3",
