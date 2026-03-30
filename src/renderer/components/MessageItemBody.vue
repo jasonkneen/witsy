@@ -127,9 +127,10 @@ const performComputation = async () => {
 
   // Use incremental computation for transient messages to reuse stable blocks
   const options = computeBlocksOptions()
+  const content = props.message.contentForUI ?? props.message.content
   const blocks = options.transient
-    ? computeBlocksIncremental(props.message.content, options, cachedContentBlocks.value)
-    : computeBlocks(props.message.content, options)
+    ? computeBlocksIncremental(content, options, cachedContentBlocks.value)
+    : computeBlocks(content, options)
 
   if (blocks.length === 0 && !props.message.transient) {
     cachedContentBlocks.value = [emptyBlock()]

@@ -1970,7 +1970,7 @@
       "toolRetry": "Ao chamar ferramentas, se você receber um erro de entrada, analise o erro e tente corrigi-lo e então tente chamar a ferramenta novamente."
     },
     "chat": {
-      "docquery": "Use o seguinte contexto para responder. Se o contexto não contiver informações relevantes, diga que não sabe em vez de inventar fatos.\n\nCONTEXTO:\n{'{'}context{'}'}\n\nCONSULTA: {'{'}query{'}'}",
+      "docquery": "<context-only>Use o contexto a seguir para responder. Se o contexto não contiver informações relevantes, diga que não sabe em vez de inventar fatos.\n\nCONTEXT:\n{'{'}context{'}'}\n\nQUERY: </context-only>{'{'}query{'}'}",
       "docrepoNoResults": "A(s) base(s) de conhecimento foram pesquisadas, mas nenhuma informação relevante foi encontrada. Não responda com base no seu próprio conhecimento. Em vez disso, informe o usuário que nenhuma informação relevante foi encontrada na(s) base(s) de conhecimento e pergunte se ele gostaria que você respondesse com base no seu conhecimento geral.",
       "empathic": "Você é um assistente de IA caloroso, empático e reflexivo. Seu trabalho é ajudar os usuários a se sentirem ouvidos, apoiados e compreendidos, enquanto proporciona informações úteis, precisas e relevantes.\n\nObjetivos:\n- Compreender as necessidades emocionais ou práticas do usuário, mesmo que não sejam expressas diretamente.\n- Comunicar-se com cuidado, paciência e clareza.\n- Priorizar ser solidário e humano no tom, enquanto ainda sendo informativo e útil.\n\nTom e Estilo:\n- Use um tom gentil e reconfortante que deixe o usuário à vontade.\n- Evite uma linguagem fria ou robótica. Fale como um companheiro compassivo e reflexivo.\n- Você pode usar leve encorajamento ou validação quando apropriado, mas evite frases vazias.\n- Não exagere suas capacidades. Mantenha-se fundamentado, gentil e honesto.\n\nEstrutura:\n- Comece com uma introdução suave e acolhedora que mostre que você compreende a situação ou o objetivo do usuário.\n- Use parágrafos curtos ou pontos em destaque para clareza ao explicar algo complexo.\n- Evite sobrecarregar o usuário com informações. Foque no que é mais relevante e digerível.\n- Sempre adapte seu estilo para corresponder ao contexto emocional — calmo em uma crise, celebrando em sucessos, gentil em dificuldades.\n\nConversa:\n- Sempre termine sua resposta com uma pergunta reflexiva ou atenciosa para convidar ao diálogo contínuo.\n\nExemplos:\n- “Isso parece muito para lidar — obrigado por confiar em mim com sua pergunta. Aqui está como podemos dividir isso.”\n- “Você não está sozinho em se perguntar sobre isso. Deixe-me guiá-lo pelo que você pode considerar.”\n- “Ouço suas preocupações. Vamos explorar algumas opções que podem ajudar.”\n\nSeu objetivo não é apenas responder, mas ser um guia solidário e emocionalmente inteligente. Sempre termine sua resposta com uma pergunta para manter a conversa fluindo.",
       "playful": "Você é um assistente de IA inteligente, brincalhão e espirituoso. Você ajuda os usuários respondendo perguntas, resolvendo problemas e oferecendo sugestões úteis — mas você faz isso com personalidade, charme e uma pitada certa de humor.\n\nObjetivos:\n- Fazer o usuário sorrir, mesmo ao responder perguntas sérias.\n- Manter suas respostas inteligentes, úteis e precisas — mas nunca monótonas.\n- Usar trocadilhos, frases inteligentes ou leve sarcasmo (quando apropriado) para tornar as interações memoráveis.\n\nTom e Estilo:\n- Use um tom divertido, animado e conversacional.\n- Sinta-se à vontade para usar piadas leves, referências culturais ou metáforas inteligentes — mas não exagere.\n- Evite ser bobo ou aleatório — sua sagacidade deve servir ao propósito, não distrair dele.\n- Você pode ser travesso, mas nunca maldoso. Você é divertido, não sarcástico.\n\nEstrutura:\n- Mantenha as respostas claras e fáceis de seguir — mesmo quando você está sendo brincalhão.\n- Use pontos em destaque, subtítulos ou espaçamento onde necessário para clareza.\n- Não sacrifique a utilidade em prol do humor. A precisão sempre vem em primeiro lugar.\n\nConversa:\n- Sempre termine sua resposta com uma pergunta brincalhona ou curiosa para manter a conversa fluindo.\n\nExemplos:\n- “Você pode fazê-lo do jeito chato... ou pode fazê-lo do meu jeito. Que, coincidentemente, é também o melhor jeito.”\n- “Imagine que o Excel e um robô tiveram um bebê. Isso é meio que o que você está pedindo — e eu estou aqui para isso.”\n- “Eu poderia te dar a resposta direto... mas onde estaria a graça nisso? Aqui está a explicação:”\n\nVocê está aqui para tornar as informações agradáveis, úteis e um pouco mais divertidas. Sempre termine sua resposta com uma pergunta para manter a conversa fluindo.",
@@ -2025,10 +2025,7 @@
     },
     "toggleSidebar": "Alternar barra lateral",
     "update": {
-      "available": "Atualização Disponível",
-      "later": "Mais tarde",
-      "restart": "Uma atualização está disponível. Reinicie para aplicá-la.",
-      "restartNow": "Reiniciar agora"
+      "available": "Atualização Disponível"
     }
   },
   "mcp": {
@@ -2601,6 +2598,7 @@
       "suggestTitle": "Sugerir um título",
       "writingAssistant": "Assistente de escrita"
     },
+    "autoSave": "Salvamento automático",
     "createEmpty": "Criar em branco",
     "delete": {
       "confirm": "Tem certeza de que deseja excluir \"{title}\"?",
@@ -2647,7 +2645,16 @@
     },
     "saveError": "Erro ao salvar o documento",
     "title": "Scratchpad",
-    "unsavedPrompt": "Você deseja salvar suas alterações?"
+    "unsavedPrompt": "Você deseja salvar suas alterações?",
+    "untitled": "Documento sem título",
+    "versions": {
+      "archive": "Arquivar versão atual",
+      "delete": "Excluir",
+      "recall": "Recuperar",
+      "recallConfirm": "Recuperar esta versão substituirá o conteúdo atual. Quaisquer alterações não salvas serão perdidas.",
+      "recallTitle": "Recuperar versão \"{name}\"?",
+      "title": "Versões"
+    }
   },
   "settings": {
     "advanced": {

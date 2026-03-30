@@ -119,7 +119,11 @@ export default class Message extends MessageBase implements IMessage {
     if (this.uiOnly) {
       return null
     } else {
+
+      // prep
       let content = this.content.replaceAll(/<tool id="([^"]+)"><\/tool>/g, '')
+      content = content.replaceAll(/<context-only>(.*?)<\/context-only>/gs, '$1')
+
       if (this.skill?.id && this.skill?.name) {
         const additionalFiles = this.skill.available_files?.map((file: SkillFileManifestItem) => `- ${file.path}`).join('\n') || '- none'
         const instructions = this.skill.instructions?.trim() || '(not available)'
@@ -136,6 +140,12 @@ export default class Message extends MessageBase implements IMessage {
     }
   }
 
+  get contentForUI(): string {
+    // Remove <context-only>...</context-only> tags AND their content for UI display
+    const content = this.content.replaceAll(/<context-only>.*?<\/context-only>/gs, '')
+    return content.trim()
+  }
+  
   isVideo(): boolean {
     for (const attachment of this.attachments) {
       if (Message.isVideoUrl(attachment.url)) {

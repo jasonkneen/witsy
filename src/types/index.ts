@@ -85,6 +85,7 @@ export interface Message extends IMessageBase {
   usage?: LlmUsage
   edited: boolean
   attachments: Attachment[]
+  contentForUI: string
   setStatus(status: string|null): void
   setExpert(expert: Expert): void
   setSkill(skill: Skill|null): void
