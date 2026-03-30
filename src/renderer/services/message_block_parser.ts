@@ -4,6 +4,11 @@ import { ToolCall } from 'types/index'
 import { closeOpenMarkdownTags, getCodeBlocks, isHtmlContent } from './markdown'
 import { kSearchPluginName } from './plugins/search'
 
+// Interactive tools that always render regardless of toolCallsDisplay
+const kInteractiveTools = [
+  'search_knowledge_base'
+]
+
 // Debug flag for block parser logging
 const DEBUG_BLOCK_PARSER = false
 
@@ -549,7 +554,7 @@ export const groupToolBlocks = (blocks: Block[]): Block[] => {
   }
 
   for (const block of blocks) {
-    if (block.type === 'tool') {
+    if (block.type === 'tool' && !kInteractiveTools.includes(block.toolCall!.function)) {
       if (toolGroup.length === 0) {
         groupStart = block.start
       }
