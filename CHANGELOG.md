@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Paste in the edit box inserts text in the end, not at the cursor position (https://github.com/nbonamy/witsy/issues/547)
+- Mermaid diagrams rendering broken
 
 ### Removed
 - N/A

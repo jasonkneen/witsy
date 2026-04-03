@@ -23,6 +23,20 @@ import { onMounted, ref } from 'vue'
 import useEventBus from '@composables/event_bus'
 const { emitBusEvent } = useEventBus()
 
+// Serialize mermaid.render() calls — it is not reentrant
+let renderQueue: Promise<void> = Promise.resolve()
+const serializedRender = (id: string, src: string): Promise<RenderResult> => {
+  return new Promise((resolve, reject) => {
+    renderQueue = renderQueue.then(async () => {
+      try {
+        resolve(await mermaid.render(id, src))
+      } catch (error) {
+        reject(error)
+      }
+    })
+  })
+}
+
 const props = defineProps({
   src: {
     type: String,
@@ -30,7 +44,7 @@ const props = defineProps({
   },
 })
 
-const render= ref<RenderResult|null>(null)
+const render = ref<RenderResult|null>(null)
 const viewCode = ref(false)
 const copyLabel = ref('Copy Code')
 const theme = ref('light')
@@ -48,13 +62,14 @@ mermaid.initialize({
 
 onMounted(async () => {
   try {
-    render.value = await mermaid.render(`mermaid-${Date.now()}`, props.src)
+    render.value = await serializedRender(`mermaid-${Date.now()}`, props.src)
   } catch (error) {
     viewCode.value = true
   }
 })
 
 const onFullscreen = () => {
+  if (!render.value) return
   const blob = new Blob([render.value.svg], { type: 'image/svg+xml' });
   const url = URL.createObjectURL(blob);
   emitBusEvent('fullscreen', { url, theme: theme.value });
@@ -66,6 +81,7 @@ const onTheme = () => {
 }
 
 const onDownload = () => {
+  if (!render.value) return
   const blob = new Blob([render.value.svg], { type: 'image/svg+xml' })
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')

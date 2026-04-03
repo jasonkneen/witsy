@@ -990,3 +990,24 @@ test('No highlight when filter is empty', async () => {
   const marks = wrapper.findAll('mark')
   expect(marks.length).toBe(0)
 })
+
+test('Mermaid diagram rendering', async () => {
+  const botMessageMermaid = Message.fromJson({ role: 'assistant', type: 'text', content: 'Here is a diagram:\n\n```mermaid\ngraph TD\nA --> B\n```\n\nThat is the diagram.' })
+  const wrapper = await mount(botMessageMermaid)
+
+  // Check that markdown-it-diagram produced <pre class="mermaid">
+  const mermaidPre = wrapper.find('pre.mermaid')
+  expect(mermaidPre.exists()).toBe(true)
+  expect(mermaidPre.text()).toContain('graph TD')
+
+  // Wait for renderMermaidBlocks timeout (150ms + buffer)
+  await new Promise(resolve => setTimeout(resolve, 300))
+  await nextTick()
+
+  // After render, mermaid component should be mounted inside pre
+  const mermaidPreAfter = wrapper.find('pre.mermaid')
+  expect(mermaidPreAfter.exists()).toBe(true)
+  // The mermaid component renders inside (viewCode fallback in test env since mermaid lib can't render SVG)
+  expect(mermaidPreAfter.find('code').exists()).toBe(true)
+})
+
