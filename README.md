@@ -10,23 +10,23 @@
 <p></p>
 <div align="center">
 
-[![Version Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/nbonamy/8febadb1ecb32078db4c003d0c09f565/raw/version.json)](https://github.com/nbonamy/witsy/releases)
-[![Downloads Badge](https://img.shields.io/github/downloads/nbonamy/witsy/total.svg?color=orange)](https://tooomm.github.io/github-release-stats/?username=nbonamy&repository=witsy)
-[![Test Badge](https://github.com/nbonamy/witsy/actions/workflows/test.yml/badge.svg)](https://github.com/nbonamy/witsy/blob/main/.github/workflows/test.yml)
-[![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/nbonamy/8febadb1ecb32078db4c003d0c09f565/raw/witsy__main.json)](https://gist.github.com/nbonamy/fee06adf8df838e499209254e61da7f6)
+[![Version Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/Kochava-Studios/8febadb1ecb32078db4c003d0c09f565/raw/version.json)](https://github.com/Kochava-Studios/witsy/releases)
+[![Downloads Badge](https://img.shields.io/github/downloads/Kochava-Studios/witsy/total.svg?color=orange)](https://tooomm.github.io/github-release-stats/?username=Kochava-Studios&repository=witsy)
+[![Test Badge](https://github.com/Kochava-Studios/witsy/actions/workflows/test.yml/badge.svg)](https://github.com/Kochava-Studios/witsy/blob/main/.github/workflows/test.yml)
+[![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/Kochava-Studios/8febadb1ecb32078db4c003d0c09f565/raw/witsy__main.json)](https://gist.github.com/Kochava-Studios/fee06adf8df838e499209254e61da7f6)
 
 </div>
 
 <div align="center">
 
-[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/nbonamy)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/nbonamy/witsy)
+[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/Kochava-Studios)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Kochava-Studios/witsy)
 
 </div>
 
 ## Downloads
 
-Download Witsy from the [releases](https://github.com/nbonamy/witsy/releases) page.
+Download Witsy from the [releases](https://github.com/Kochava-Studios/witsy/releases) page.
 
 On macOS you can also `brew install --cask witsy`.
 
@@ -81,7 +81,7 @@ Non-exhaustive feature list:
 
 ## Setup
 
-You can download a binary from from the [releases](https://github.com/nbonamy/witsy/releases) page or build yourself:
+You can download a binary from from the [releases](https://github.com/Kochava-Studios/witsy/releases) page or build yourself:
 
 ```
 npm ci

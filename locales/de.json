@@ -267,7 +267,7 @@
         "jsonSchema": "JSON…",
         "step": "Schritt {step}",
         "structuredOutput": {
-          "text": "Geben Sie ein <a href=\"https://github.com/nbonamy/witsy/wiki/Agents-JSON-format\" target=\"_blank\">einfaches JSON-Schema</a> an, um das erwartete Ausgabeformat dieses Schrittes zu definieren.",
+          "text": "Geben Sie ein <a href=\"https://github.com/Kochava-Studios/witsy/wiki/Agents-JSON-format\" target=\"_blank\">einfaches JSON-Schema</a> an, um das erwartete Ausgabeformat dieses Schrittes zu definieren.",
           "title": "JSON-Schema"
         },
         "systemVar": {

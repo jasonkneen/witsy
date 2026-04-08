@@ -109,7 +109,7 @@ test('Download local file', async () => {
 test('Download remote file', async () => {
   const tempFile = path.join(os.tmpdir(), 'vitest')
   const fileURL = await file.downloadFile(app, {
-    url: 'https://raw.githubusercontent.com/nbonamy/witsy/main/tests/fixtures/sample.txt',
+    url: 'https://raw.githubusercontent.com/Kochava-Studios/witsy/main/tests/fixtures/sample.txt',
     properties: {
       filename: 'vitest',
       prompt: false,

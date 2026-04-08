@@ -286,7 +286,7 @@
         "jsonSchema": "JSON…",
         "step": "Step {step}",
         "structuredOutput": {
-          "text": "Specify a <a href=\"https://github.com/nbonamy/witsy/wiki/Agents-JSON-format\" target=\"_blank\">simple JSON schema</a> to define the expected output format of this step.",
+          "text": "Specify a <a href=\"https://github.com/Kochava-Studios/witsy/wiki/Agents-JSON-format\" target=\"_blank\">simple JSON schema</a> to define the expected output format of this step.",
           "title": "JSON Schema"
         },
         "systemVar": {

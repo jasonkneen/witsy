@@ -286,7 +286,7 @@
         "jsonSchema": "JSON…",
         "step": "Krok {step}",
         "structuredOutput": {
-          "text": "Określ <a href=\"https://github.com/nbonamy/witsy/wiki/Agents-JSON-format\" target=\"_blank\">prosty schemat JSON</a>, aby zdefiniować oczekiwany format wyjściowy tego kroku.",
+          "text": "Określ <a href=\"https://github.com/Kochava-Studios/witsy/wiki/Agents-JSON-format\" target=\"_blank\">prosty schemat JSON</a>, aby zdefiniować oczekiwany format wyjściowy tego kroku.",
           "title": "Schemat JSON"
         },
         "systemVar": {

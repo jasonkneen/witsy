@@ -23,7 +23,7 @@ If your issue is related to an interaction with a model (chat, text-to-speech, s
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem. If your issue is related to an interaction with a model, please also include screenshots of the Debug Console. To open the Debug Console please refer to https://github.com/nbonamy/witsy/wiki/Network-Debug-Console.
+If applicable, add screenshots to help explain your problem. If your issue is related to an interaction with a model, please also include screenshots of the Debug Console. To open the Debug Console please refer to https://github.com/Kochava-Studios/witsy/wiki/Network-Debug-Console.
 
 **Desktop (please complete the following information):**
  - OS: [e.g. macOS 15, Windows 11]

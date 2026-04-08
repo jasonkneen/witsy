@@ -13,7 +13,7 @@
  *   --limit     Number of commits to show (default: auto-fit terminal)
  */
 
-const GIST_URL = 'https://gist.githubusercontent.com/nbonamy/fee06adf8df838e499209254e61da7f6/raw/coverage-history.json';
+const GIST_URL = 'https://gist.githubusercontent.com/Kochava-Studios/fee06adf8df838e499209254e61da7f6/raw/coverage-history.json';
 
 // Parse arguments
 const args = process.argv.slice(2);

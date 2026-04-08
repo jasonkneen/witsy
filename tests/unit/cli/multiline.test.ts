@@ -88,8 +88,8 @@ describe('Multi-line Input Support', () => {
     test('should handle real-world changelog paste', () => {
       const text = `### Added
 - Design Studio drawing
-- Let users choose which tools to enable from each MCP, and persist that choice for all models (https://github.com/nbonamy/witsy/issues/410)
-- Allow selecting and copying text from tool execution results (https://github.com/nbonamy/witsy/issues/421)`
+- Let users choose which tools to enable from each MCP, and persist that choice for all models (https://github.com/Kochava-Studios/witsy/issues/410)
+- Allow selecting and copying text from tool execution results (https://github.com/Kochava-Studios/witsy/issues/421)`
       const result = calculateLineCount('> ', text, 90) // Typical wider terminal
       // First line: "> ### Added " = 13 chars → 1 line
       // Second line: "- Design Studio drawing" = 23 chars → 1 line

@@ -251,7 +251,7 @@ const template = (app: App, callbacks: MenuCallbacks, shortcuts: ShortcutsConfig
         {
           label: t('menu.help.learnMore'),
           click: async () => {
-            await shell.openExternal('https://github.com/nbonamy/witsy')
+            await shell.openExternal('https://github.com/Kochava-Studios/witsy')
           }
         }
       ]

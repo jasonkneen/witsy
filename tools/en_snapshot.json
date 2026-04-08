@@ -236,7 +236,7 @@
   "agent.create.workflow.insertSystemVariable": "Insert system variable",
   "agent.create.workflow.jsonSchema": "JSON…",
   "agent.create.workflow.step": "Step {step}",
-  "agent.create.workflow.structuredOutput.text": "Specify a <a href=\"https://github.com/nbonamy/witsy/wiki/Agents-JSON-format\" target=\"_blank\">simple JSON schema</a> to define the expected output format of this step.",
+  "agent.create.workflow.structuredOutput.text": "Specify a <a href=\"https://github.com/Kochava-Studios/witsy/wiki/Agents-JSON-format\" target=\"_blank\">simple JSON schema</a> to define the expected output format of this step.",
   "agent.create.workflow.structuredOutput.title": "JSON Schema",
   "agent.create.workflow.systemVar.previousStep": "Previous Steps Output",
   "agent.create.workflow.title": "Workflow",

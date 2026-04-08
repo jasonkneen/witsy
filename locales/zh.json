@@ -286,7 +286,7 @@
         "jsonSchema": "JSON…",
         "step": "步骤 {step}",
         "structuredOutput": {
-          "text": "指定一个<a href=\"https://github.com/nbonamy/witsy/wiki/Agents-JSON-format\" target=\"_blank\">简单的JSON模式</a>来定义此步骤的预期输出格式。",
+          "text": "指定一个<a href=\"https://github.com/Kochava-Studios/witsy/wiki/Agents-JSON-format\" target=\"_blank\">简单的JSON模式</a>来定义此步骤的预期输出格式。",
           "title": "JSON schema"
         },
         "systemVar": {

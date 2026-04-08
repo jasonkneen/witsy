@@ -251,7 +251,7 @@ export default class Generator {
     } finally {
 
       // make sure the message is terminated correctly
-      // https://github.com/nbonamy/witsy/issues/104
+      // https://github.com/Kochava-Studios/witsy/issues/104
       if (response.transient) {
         console.warn('Response is still transient. Appending empty text.')
         response.appendText({ type: 'content', text: '', done: true })
