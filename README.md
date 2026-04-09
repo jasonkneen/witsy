@@ -142,10 +142,6 @@ Commands inspired by [https://the.fibery.io/@public/Public_Roadmap/Roadmap_Item/
 
 From [https://github.com/f/awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts).
 
-## Scratchpad
-
-https://www.youtube.com/watch?v=czcSbG2H-wg
-
 ## Chat with your documents (RAG)
 
 You can connect each chat with a document repository: Witsy will first search for relevant documents in your local files and provide this info to the LLM. To do so:
@@ -178,10 +174,6 @@ Once the text is transcribed you can:
 - Summarize it
 - Translate it to any language
 - Insert it in the application that was running before you activated the dictation
-
-## Anthropic Computer Use
-
-https://www.youtube.com/watch?v=vixl7I07hBk
 
 ## HTTP API
 
